@@ -20,8 +20,8 @@ const CommentsTable = () => {
       <Typography variant="h3" align="center">
         Comments
       </Typography>
-      <TableContainer component={Paper} sx={{ maxWidth: 400 }}>
-        <Table sx={{ maxWidth: 400 }}>
+      <TableContainer component={Paper}>
+        <Table>
           <TableHead sx={{ backgroundColor: '#c55756' }}>
             <TableRow>
               <TableCell>
@@ -29,7 +29,7 @@ const CommentsTable = () => {
                   Comment
                 </Typography>
               </TableCell>
-              <TableCell colSpan={3}>
+              <TableCell colSpan={4}>
                 <Typography variant="h6" sx={{ color: '#e9fcfd' }}>
                   User
                 </Typography>

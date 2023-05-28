@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
+import { COMMENTS_INPUT_WIDTH as WIDTH } from './utils/constants';
 
 const AddComment = () => {
   const [username, setUsername] = useState('');
@@ -21,7 +22,7 @@ const AddComment = () => {
   };
 
   return (
-    <Stack spacing={1} sx={{ maxWidth: 400 }}>
+    <Stack spacing={1} sx={{ width: WIDTH }}>
       <Typography variant="h6">Add new comment</Typography>
       <TextField
         label="Username"
@@ -32,6 +33,7 @@ const AddComment = () => {
       <TextField
         label="Comment"
         variant="standard"
+        multiline
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       />

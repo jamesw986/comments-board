@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 import ToggleEditModeContext from '../contexts/ToggleEditModeContext';
+import { COMMENTS_INPUT_WIDTH as WIDTH } from './utils/constants';
 
 interface EditCommentProps {
   id: string;
@@ -27,12 +28,13 @@ const EditComment = ({ id, username, comment }: EditCommentProps) => {
   };
 
   return (
-    <Stack spacing={1} sx={{ maxWidth: 400 }}>
+    <Stack spacing={1} sx={{ width: WIDTH }}>
       <Typography variant="h6">Edit comment</Typography>
       <TextField disabled label="Username" variant="standard" value={username} />
       <TextField
         label="Comment"
         variant="standard"
+        multiline
         value={newComment}
         onChange={(e) => setNewComment(e.target.value)}
       />

@@ -20,8 +20,8 @@ const Comments = () => {
   };
 
   return (
-    <Container maxWidth="xs">
-      <Stack spacing={8} sx={{ marginLeft: 'auto', marginRight: 'auto' }}>
+    <Container maxWidth="sm">
+      <Stack spacing={8} alignItems="center">
         <ToggleEditModeContext.Provider value={{ toggleEditMode }}>
           <CommentsTable />
           {editComment ? (

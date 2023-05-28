@@ -7,7 +7,7 @@ const port = 3001;
 let comments = [];
 
 const findCommentById = (id) => {
-  comments.find((comment) => comment.id === id);
+  return comments.find((comment) => comment.id === id);
 };
 
 app.use(express.json());
@@ -25,10 +25,7 @@ app.get('/comments/:id', cors(), (req, res) => {
 app.post('/comments', cors(), (req, res) => {
   const { username, comment, id } = req.body;
   comments.push({ username, comment, id });
-  console.log(comments);
-  res
-    .sendStatus(201)
-    .send(`Comment created. Current list of comments: ${JSON.stringify(comments)}`);
+  res.status(201).send(`Comment created. Current list of comments: ${JSON.stringify(comments)}`);
 });
 
 app.patch('/comments/:id', cors(), (req, res) => {
